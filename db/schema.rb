@@ -32,6 +32,14 @@ ActiveRecord::Schema.define(version: 20171026040357) do
     t.integer  "ward_id"
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
+  end
+
   create_table "wards", force: :cascade do |t|
     t.string  "name"
     t.integer "committee_id"

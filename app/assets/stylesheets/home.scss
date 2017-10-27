@@ -11,12 +11,6 @@ li{
     list-style: none;
 }
 
-.navbar li{
-    font-size: 150%;
-    float: right;
-    padding:10px;
-}
-
 .wardsLst{
     clear:right;
     float:left;
@@ -24,4 +18,21 @@ li{
 
 .map_block{
     float:left;
+}
+
+#auth{
+    padding-top:0px;
+    padding-left:20px;
+}
+.auth{
+    color: white;
+    font-size: 95%;
+    border: none;
+    cursor: pointer;
+    outline-color: white;
+    padding:10px;
+}
+#authen{
+    background-color:#49DC4B;
+    
 }
