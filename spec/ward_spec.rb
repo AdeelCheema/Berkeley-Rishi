@@ -17,7 +17,7 @@ describe Ward do
             it "contains 4 markers" do
                 marker_hash = Ward.build_markers
                 marker_hash_size = marker_hash.size
-                coord_size = @ward_1.coordinates.size
+                coord_size = Coordinate.all.size
                 expect(marker_hash_size).to eql(coord_size)
             end
         end
