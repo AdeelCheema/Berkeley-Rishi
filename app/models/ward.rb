@@ -3,16 +3,16 @@ class Ward < ActiveRecord::Base
     has_many :coordinates
 
 
-    def self.build_markers
-
-      coordinates = Coordinate.all
-      marker_hash = Gmaps4rails.build_markers(coordinates) do |coordinate, marker|
-        marker.lat coordinate.lat
-        marker.lng coordinate.lng
-        marker.infowindow "contentString"
-      end
-      return marker_hash
-    end
+    # def self.build_markers
+    #
+    #   coordinates = Coordinate.all
+    #   marker_hash = Gmaps4rails.build_markers(coordinates) do |coordinate, marker|
+    #     marker.lat coordinate.lat
+    #     marker.lng coordinate.lng
+    #     marker.infowindow "contentString"
+    #   end
+    #   return marker_hash
+    # end
 
     def self.build_ward_overlay()
       regions = []
