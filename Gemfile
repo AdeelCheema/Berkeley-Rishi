@@ -53,6 +53,7 @@ group :test do
   gem 'autotest-rails'
   gem 'factory_girl_rails' # if using FactoryGirl
   gem 'metric_fu'        # collect code metrics
+  gem 'database_cleaner'
 end
 
 group :production do
