@@ -1,9 +1,10 @@
-<% if !current_user.nil? and current_user.role.eql? "internal" %>
-    <%= puts "my id: "+current_user.uid %>
-    <h1>progress</h1>
+<% @committees.each do |committee| %>
+    <div class=cmt>
+        <div class="picture"><img src=<%= image_path(committee.intro_img) %>></img></div>
+        <div class="cmt_name"><%= link_to committee.name, committee_path(committee) %></div>
+        <hr>
+        <div class="introduction">
+            <p><%= committee.intro %></p>
+        </div>
+    </div>
 <% end %>
-<%= @name %>
-<br />
-<%= @text %>
-<br />
-<%= @timeline %>

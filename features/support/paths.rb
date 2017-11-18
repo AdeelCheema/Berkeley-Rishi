@@ -19,6 +19,7 @@ module NavigationHelpers
     when /^the (.*) committee page/ 
       @cmt = Committee.find_by_name($1)
       committee_path(@cmt.id)
+    
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

@@ -59,6 +59,26 @@ end
 # See https://github.com/cucumber/cucumber-rails/blob/master/features/choose_javascript_database_strategy.feature
 Cucumber::Rails::Database.javascript_strategy = :truncation
 
+Before('@executive_test') do
+  OmniAuth.config.test_mode = true
+  Capybara.default_host = 'https://berkeley-rishi.herokuapp.com/'
+
+  OmniAuth.config.mock_auth[:google] = OmniAuth::AuthHash.new({
+    :provider => 'google_oauth2',
+    :uid => '0000',
+    :credentials => {
+      :token => 'random',
+      :expires_at => 150218
+    },
+    :info => {
+      :name => 'executive',
+    }
+  })
+  OmniAuth.config.mock_auth[:default] = OmniAuth.config.mock_auth[:google]
+end
+After('@executive_test') do
+  OmniAuth.config.test_mode = false
+end
 
 Before('@internal_test') do
   OmniAuth.config.test_mode = true

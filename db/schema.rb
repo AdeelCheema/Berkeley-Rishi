@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171117230811) do
+ActiveRecord::Schema.define(version: 20171118050150) do
 
   create_table "committees", force: :cascade do |t|
     t.string   "name"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20171117230811) do
     t.string   "image_url"
     t.integer  "coordinate_id"
     t.integer  "ward_id"
+    t.text     "intro"
+    t.string   "intro_img"
   end
 
   add_index "committees", ["coordinate_id"], name: "index_committees_on_coordinate_id"

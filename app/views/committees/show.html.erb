@@ -1,9 +1,17 @@
+<% if !current_user.nil? and current_user.role.eql? "executive" %>
+    <%= puts "my id: "+current_user.uid %>
+    <%= link_to "Edit Committees", edit_committee_path %>
+<% end %>
+<div class="cmt_name"><%= @name %></div>
+    <hr>
+    <div class="introduction">
+        <p><%= @text %></p>
+    </div>
+    <div class="cmt_name"><%= @timeline %></div>
+    <hr>
+</div>
+
 <% if !current_user.nil? and current_user.role.eql? "internal" %>
     <%= puts "my id: "+current_user.uid %>
     <h1>progress</h1>
 <% end %>
-<%= @name %>
-<br />
-<%= @text %>
-<br />
-<%= @timeline %>

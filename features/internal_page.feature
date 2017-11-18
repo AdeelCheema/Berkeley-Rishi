@@ -17,7 +17,6 @@ Scenario: external viewer cannot see Education internal page
   And I am on the Education committee page
   Then I should not see Education progress
  
-@internal_test 
 Scenario: External user cannot see internal page
   Given I am not logged in
   And I am on the members page
